@@ -1,4 +1,4 @@
-import React, { useState , useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import Topnav from './topnav';
 import Homeitems from './Homeitems';
 import Timer from './Timer';
@@ -10,36 +10,16 @@ import Loading from './Loading'
 
 import './App.css';
 
-const Home = () => {
-
-  const [carted, setCarted] = useState([]);
-
-  const cartbag = (item) => {
-    setCarted(item);
-    console.log(carted);
-  };
-
-  const [Cartvalue, setCartvalue] = useState(0)
-  const increcart = () => {
-    
-    setCartvalue(Cartvalue + 1);
-
-  }
-  const decrecart = () => setCartvalue(Cartvalue - 1)
-
-  const [wishlistvalue, setwishlistvalue] = useState(0)
-  const increwishlist = () => setwishlistvalue(wishlistvalue + 1)
-  const decrewishlist = () => setwishlistvalue(wishlistvalue - 1)
+const Home = (props) => {
 
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
-    // Simulate loading delay
     const delay = 4000; // 2 seconds
     setTimeout(() => {
       setIsLoading(false);
     }, delay);
   }, []);
-  
+
 
   return (
     <>
@@ -48,25 +28,18 @@ const Home = () => {
       ) : (
         <>
           <Contact />
-          <Topnav
-            increcart={increcart}
-            decrecart={decrecart}
-            wishlistvalue={wishlistvalue}
-            Cartvalue={Cartvalue}
-            // cartbox={cartbox}
-          />
+          <Topnav wishlistvalue={props.wishlistvalue} Cartvalue={props.Cartvalue} />
           <Timer />
           <Scrollcard />
           <Navlinksbtns />
-  
-      <Homeitems cartbag={cartbag} increcart={increcart} decrecart={decrecart} increwishlist={increwishlist} decrewishlist={decrewishlist} />
-    
+          <Homeitems CartNum={props.CartNum} WishNum={props.WishNum} carthandler={props.carthandler} wishhandler={props.wishhandler}/>
           <Feedback />
+          
         </>
       )}
     </>
   );
-  
+
 }
 
 export default Home;

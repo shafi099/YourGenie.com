@@ -7,11 +7,12 @@ import accesoriesicon from '../src/pics/accesoriesicon.png';
 import wishilisticonwhite from '../src/pics/wishilisticonwhite.png';
 import carticonwhite from '../src/pics/carticonwhite.png';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
+import { Link} from 'react-router-dom';
 
 const Navlinksbtns = () => {
   const isMobile = window.innerWidth <= 640;
 
-  const offset = isMobile ? '98' : '52'; // Change the offset based on screen width
+  const offset = isMobile ? '98' : '52'; 
 
   return (
     <>
@@ -51,17 +52,20 @@ const Navlinksbtns = () => {
           </span>
         </AnchorLink>
       </div>
-
+      
       <div className="viewcart_viewwishlist">
+      <Link to='/Cart' className="no-underline">
         <span className="viewbtn">
           <img src={carticonwhite} alt="carticon" className="cartwishlistnimg"></img>
           <span className="carttext">View cart</span>
         </span>
-
+        </Link>
+        <Link to='/Wishlist' className="no-underline">
         <span className="viewbtn">
           <img src={wishilisticonwhite} alt="wishlisticon" className="cartwishlistnimg"></img>
           <span className="carttext">Wishlists</span>
         </span>
+        </Link>
       </div>
     </>
   );

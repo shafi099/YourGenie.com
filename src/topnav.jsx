@@ -30,7 +30,8 @@ const Topnav = (props) => {
                 <span className="cartcount">{props.wishlistvalue}</span>
               </span>
             </Link>
-            <img src={profilepic} className='contact' alt="profile_pic"></img>
+            <a href='https://shafi-portfolio.netlify.app/' target='_blank' rel="noopener noreferrer">
+            <img src={profilepic} className='contact' alt="profile_pic"></img></a>
           </span>
 
         </div>

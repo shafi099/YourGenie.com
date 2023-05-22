@@ -11,7 +11,7 @@ html {
 .navLink {
   text-decoration: none;
 }
-
+/* a{} */
 @font-face {
   font-family: juliet;
   src: url(Julietta-Messie.otf);
@@ -97,6 +97,7 @@ body {
 
   .cartwishlist {
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -106,8 +107,14 @@ body {
   .cartbtn,
   .wishlistbtn {
     display: flex;
-    align-items: center;    background-color: transparent;
+    align-items: center; 
+    justify-content: center;
+    text-align: center;   background-color: transparent;
     border:0;
+    transition: all 0.1s ease;
+  }
+  .cartbtn:hover,.wishlistbtn:hover{
+    transform: scale(0.92);
   }
 
   .cartbtn img,
@@ -117,7 +124,7 @@ body {
   }
 
   .cartcount {
-    font-size: 18px;
+    font-size: 20px;
     font-family: SFround;
 
   }
@@ -643,6 +650,50 @@ display:grid;
   .send:hover {
     padding: 5px 35px 5px 35px;
   }
+  .totalamountportion{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+  .amounttext{
+    font-family: SFround;
+    font-size: 16px;
+  }
+  .amount{
+    font-size: 28px;
+    font-family: Agenor;
+    color: rgb(0, 0, 0);
+  }
+  .cartportion{
+    margin:20px 20% 20px 20%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap:3%
+  }
+  .Cartbox{
+    display: grid;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+    gap:5%;
+    width:250px;
+    padding:10px;
+    height:110px;
+    text-align: center;
+    transition: all 0.2s ease;
+    margin-bottom: 6px;
+    margin-top: 6px;
+    border-radius: 15px;
+    backdrop-filter: blur(20px) opacity(0.5);
+    background-size: cover;
+    background-image: linear-gradient(to bottom, #f6f6f6, #fcfcfc, #f8f8f8, #f5f5f5, #f2f2f2, #ebebeb, #e3e3e3, #dcdcdc, #cecece, #c1c1c1, #b3b3b3, #a2a2a2);
+    box-shadow: 2px 2px 5px #4141417e,
+      -2px -2px 5px #83838385;
+      transition: all 0.3s ease;
+  }
+
 }
 
 @media screen and (max-device-width: 640px) {
@@ -701,6 +752,8 @@ display:grid;
   .wishlistbtn {
     display: flex;
     align-items: center;
+    background-color: transparent;
+    border: 0 solid transparent;
   }
 
   .cartbtn img,
@@ -711,7 +764,6 @@ display:grid;
 
   .cartcount {
     font-size: 18px;
-    ;
     font-family: SFround;
   }
 
@@ -1007,16 +1059,15 @@ display:grid;
   }
 
   .itembox {
+    width: 114px;
+    height: 178px;
     display: grid;
     text-align: center;
     justify-content: center;
     transition: all 0.2s ease;
     margin-bottom: 6px;
     margin-top: 6px;
-    width: 114px;
-    height: 178px;
     border-radius: 15px;
-    ;
     backdrop-filter: blur(20px) opacity(0.5);
     background-size: cover;
     background-image: linear-gradient(to bottom, #ffffff, #fcfcfc, #f8f8f8, #f5f5f5, #f2f2f2, #ebebeb, #e3e3e3, #dcdcdc, #cecece, #c1c1c1, #b3b3b3, #a2a2a2);
@@ -1222,5 +1273,48 @@ display:grid;
 
   .send:hover {
     padding: 5px 35px 5px 35px;
+  }
+  .totalamountportion{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+  .amounttext{
+    font-family: SFround;
+    font-size: 16px;
+  }
+  .amount{
+    font-size: 28px;
+    font-family: Agenor;
+    color: rgb(0, 0, 0);
+  }
+  .cartportion{
+    margin:20px 5% 20px 5%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap:3%
+  }
+  .Cartbox{
+    display: grid;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+    gap:5%;
+    width:140px;
+    padding:10px;
+    height:80px;
+    text-align: center;
+    transition: all 0.2s ease;
+    margin-bottom: 6px;
+    margin-top: 6px;
+    border-radius: 15px;
+    backdrop-filter: blur(20px) opacity(0.5);
+    background-size: cover;
+    background-image: linear-gradient(to bottom, #f6f6f6, #fcfcfc, #f8f8f8, #f5f5f5, #f2f2f2, #ebebeb, #e3e3e3, #dcdcdc, #cecece, #c1c1c1, #b3b3b3, #a2a2a2);
+    box-shadow: 2px 2px 5px #4141417e,
+      -2px -2px 5px #83838385;
+      transition: all 0.3s ease;
   }
 }
